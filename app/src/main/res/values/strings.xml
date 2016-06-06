@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">CineMovie</string>
+    <string name="title_activity_login">Sign in</string>
+
+    <!-- Homepage -->
+    <string name="home_label_title">Welcome to</string>
+    <string name="home_label_subtitle">CINEQUIZZ</string>
+    <string name="home_button_play">Play</string>
+    <string name="home_button_achievements">Achievements</string>
+    <string name="home_label_credit">Crédits</string>
+    <!-- /Homepage -->
+
+</resources>
