@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">CineMovie</string>
     <string name="title_activity_login">Sign in</string>
-
+    <string name="hello_world">Hello World</string>
     <!-- Homepage -->
     <string name="home_label_title">Welcome to</string>
     <string name="home_label_subtitle">CINEQUIZZ</string>

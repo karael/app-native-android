@@ -31,8 +31,8 @@
         android:id="@+id/home_button_play"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/home_label_subtitle"
-        android:layout_marginTop="150dp" />
-        />
+        android:layout_marginTop="150dp"
+        android:onClick="onClickPlayButton" />
 
     <Button
         android:layout_width="wrap_content"
@@ -41,7 +41,7 @@
         android:id="@+id/home_button_achievements"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/home_button_play"
-        />
+        android:onClick="onClickAchievementButton" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -50,5 +50,6 @@
         android:id="@+id/home_label_credit"
         android:layout_below="@+id/home_button_achievements"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="50$dp" />
+        android:layout_marginTop="50dp"
+        android:onClick="onClickAchievementButton"/>
 </RelativeLayout>
