@@ -1,19 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android"
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.example.toolbar.MainActivity" >
 
-    <item android:id="@+id/action_search"
+    <item
+        android:id="@+id/action_search"
         android:title="@string/hello_world"
-        android:showAsAction="ifRoom"
-        android:orderInCategory="1"
-        android:menuCategory="secondary"/>
+        app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/action_settings"
-        android:orderInCategory="100"
-        android:title="@string/hello_world"
-        app:showAsAction="never"/>
+        android:title="@string/hello_world2"
+        app:showAsAction="always" />
 
 </menu>

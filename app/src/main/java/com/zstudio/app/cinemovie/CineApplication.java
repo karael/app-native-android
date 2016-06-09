@@ -8,12 +8,9 @@ import com.android.volley.toolbox.Volley;
 
 import com.zstudio.app.cinemovie.network.LruBitmapCache;
 
-
-/**
- * Created by karael on 09/06/2016.
- */
 public class CineApplication extends Application {
 
+    private String uuid;
     private RequestQueue requestQueue;
     private static CineApplication singleInstance;
     private ImageLoader imageLoader;
@@ -27,6 +24,8 @@ public class CineApplication extends Application {
         requestQueue = Volley.newRequestQueue(this);
         LruBitmapCache lruBitmapCache = new LruBitmapCache(8 * 1024 * 1024); //8Mo
         imageLoader = new ImageLoader(requestQueue, lruBitmapCache);
+
+
     }
 
     public static CineApplication getSingleInstance() {
@@ -43,4 +42,15 @@ public class CineApplication extends Application {
 
         return imageLoader;
     }
+
+    public void setUuid(String userUuid) {
+        uuid = userUuid;
+    }
+
+    public String getUuid() {
+        return uuid;
+    }
+
 }
+
+
