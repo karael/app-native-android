@@ -5,8 +5,10 @@ import android.os.Bundle;
 import android.view.View;
 import android.content.Intent;
 
+import com.zstudio.app.cinemovie.activity.GameActivity;
 
-public class HomeActivity extends AppCompatActivity {
+
+public class MainActivity extends AppCompatActivity {
 
 
     @Override
