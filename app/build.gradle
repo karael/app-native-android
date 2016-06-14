@@ -29,4 +29,5 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.3.3'
 
     compile 'com.spothero.volley:volley-jackson-extension:1.0.1'
+
 }

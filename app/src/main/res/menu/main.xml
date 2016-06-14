@@ -1,18 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    tools:context="com.example.toolbar.MainActivity" >
-
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
-        android:id="@+id/action_search"
-        android:title="@string/hello_world"
-        app:showAsAction="ifRoom" />
+        android:id="@+id/game_button_back"
+
+        android:title="@string/back"
+        android:orderInCategory="1"
+        app:showAsAction="always"/>
 
     <item
         android:id="@+id/action_settings"
-        android:title="@string/hello_world2"
-        app:showAsAction="always" />
+        android:gravity="top|center"
+        android:title="@string/game_score"
+        android:textColor="@color/colorButtonTextBlue"
+        android:orderInCategory="2"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/game_button_skip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@color/colorButtonBackgroundBlue"
+        android:drawableTop="@drawable/arrow_skip"
+        android:textColor="@color/colorButtonTextWhite"
+        android:title="@string/skip"
+        android:orderInCategory="3"
+        app:showAsAction="always"/>
 
 </menu>
