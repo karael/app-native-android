@@ -1,8 +1,11 @@
 package com.zstudio.app.cinemovie.model;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.util.ArrayList;
 
-public class Movie{
+public class Movie implements Parcelable {
 
     private String id;
     private String idThemoviedb;
@@ -123,4 +126,79 @@ public class Movie{
     public void setThumbnail(String thumbnail) {
         this.thumbnail = thumbnail;
     }
+
+    protected Movie(Parcel in) {
+        id = in.readString();
+        idThemoviedb = in.readString();
+        slug = in.readString();
+        title = in.readString();
+        budget = in.readString();
+        revenue = in.readString();
+        releaseDate = in.readString();
+        index1 = in.readString();
+        index2 = in.readString();
+        index3 = in.readString();
+        illu = in.readString();
+        cover = in.readString();
+        thumbnail = in.readString();
+        if (in.readByte() == 0x01) {
+            actors = new ArrayList<Actor>();
+            in.readList(actors, Actor.class.getClassLoader());
+        } else {
+            actors = null;
+        }
+        if (in.readByte() == 0x01) {
+            genres = new ArrayList<Genre>();
+            in.readList(genres, Genre.class.getClassLoader());
+        } else {
+            genres = null;
+        }
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(id);
+        dest.writeString(idThemoviedb);
+        dest.writeString(slug);
+        dest.writeString(title);
+        dest.writeString(budget);
+        dest.writeString(revenue);
+        dest.writeString(releaseDate);
+        dest.writeString(index1);
+        dest.writeString(index2);
+        dest.writeString(index3);
+        dest.writeString(illu);
+        dest.writeString(cover);
+        dest.writeString(thumbnail);
+        if (actors == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(actors);
+        }
+        if (genres == null) {
+            dest.writeByte((byte) (0x00));
+        } else {
+            dest.writeByte((byte) (0x01));
+            dest.writeList(genres);
+        }
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<Movie> CREATOR = new Parcelable.Creator<Movie>() {
+        @Override
+        public Movie createFromParcel(Parcel in) {
+            return new Movie(in);
+        }
+
+        @Override
+        public Movie[] newArray(int size) {
+            return new Movie[size];
+        }
+    };
 }

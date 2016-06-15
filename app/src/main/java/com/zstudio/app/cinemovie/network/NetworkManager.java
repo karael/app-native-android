@@ -21,46 +21,138 @@ import java.util.Map;
 public class NetworkManager {
 
 
-    public interface TestResultListener {
+    public interface JSONObjectResultListener {
         void onResult(JSONObject result);
-        void onFail();
+        void onFail(Integer statusCode);
     }
 
-    public static void getTest(String tag,
-                               final TestResultListener listener) {
-        // Tag used to cancel the request
+    public static void getUserId(String tag,
+                               final JSONObjectResultListener listener) {
+
         final String TAG = tag;
-        String url = "http://163.172.29.197:3000/api/movie";
+        final String url = "http://163.172.29.197:3000/api/user";
+        final String UUID = CineApplication.getSingleInstance().getAndroidId();
+
         JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
                 url, null,
                 new Response.Listener<JSONObject>() {
 
                     @Override
                     public void onResponse(JSONObject response) {
+                        if(listener!=null) {
+                            listener.onResult(response);
+                        }
                         Log.d(TAG, response.toString());
-
-                            if(listener!=null) {
-                                listener.onResult(response);
-                            }
                     }
                 }, new Response.ErrorListener() {
 
             @Override
             public void onErrorResponse(VolleyError error) {
-                VolleyLog.d(TAG, "Error: " + error.getMessage());
-                listener.onFail();
+                VolleyLog.d(TAG + " UUID: " + UUID);
+                VolleyLog.d(TAG + " code: " + error.networkResponse.statusCode);
+                VolleyLog.d(TAG + " Error: " + error.toString());
+                listener.onFail(error.networkResponse.statusCode);
             }
+
         }) {
 
             @Override
             public Map<String, String> getHeaders() throws AuthFailureError {
                 HashMap<String, String> headers = new HashMap<String, String>();
                 headers.put("Content-Type", "application/json");
-                headers.put("X-app-UUID", "132132131232112");
+                headers.put("X-app-UUID", UUID);
                 return headers;
             }
 
         };
+
         CineApplication.getSingleInstance().getRequestQueue().add(jsonObjReq);
     }
+
+    public static void getMovie(String tag,
+                                 final JSONObjectResultListener listener) {
+
+        final String TAG = tag;
+        final String url = "http://163.172.29.197:3000/api/user";
+        final String UUID = CineApplication.getSingleInstance().getAndroidId();
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
+                url, null,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        if(listener!=null) {
+                            listener.onResult(response);
+                        }
+                        Log.d(TAG, response.toString());
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG + " UUID: " + UUID);
+                VolleyLog.d(TAG + " code: " + error.networkResponse.statusCode);
+                VolleyLog.d(TAG + " Error: " + error.toString());
+                listener.onFail(error.networkResponse.statusCode);
+            }
+
+        }) {
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/json");
+                headers.put("X-app-UUID", UUID);
+                return headers;
+            }
+
+        };
+
+        CineApplication.getSingleInstance().getRequestQueue().add(jsonObjReq);
+    }
+
+    public static void getAchievement(String tag,
+                                 final JSONObjectResultListener listener) {
+
+        final String TAG = tag;
+        final String url = "http://163.172.29.197:3000/api/user";
+        final String UUID = CineApplication.getSingleInstance().getAndroidId();
+
+        JsonObjectRequest jsonObjReq = new JsonObjectRequest(Request.Method.GET,
+                url, null,
+                new Response.Listener<JSONObject>() {
+
+                    @Override
+                    public void onResponse(JSONObject response) {
+                        if(listener!=null) {
+                            listener.onResult(response);
+                        }
+                        Log.d(TAG, response.toString());
+                    }
+                }, new Response.ErrorListener() {
+
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                VolleyLog.d(TAG + " UUID: " + UUID);
+                VolleyLog.d(TAG + " code: " + error.networkResponse.statusCode);
+                VolleyLog.d(TAG + " Error: " + error.toString());
+                listener.onFail(error.networkResponse.statusCode);
+            }
+
+        }) {
+
+            @Override
+            public Map<String, String> getHeaders() throws AuthFailureError {
+                HashMap<String, String> headers = new HashMap<String, String>();
+                headers.put("Content-Type", "application/json");
+                headers.put("X-app-UUID", UUID);
+                return headers;
+            }
+
+        };
+
+        CineApplication.getSingleInstance().getRequestQueue().add(jsonObjReq);
+    }
+
 }

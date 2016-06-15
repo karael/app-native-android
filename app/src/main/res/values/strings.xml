@@ -13,10 +13,12 @@
     <string name="home_label_credit">Crédits</string>
     <!-- /Homepage -->
 
-    <!-- Menu -->
+    <!-- Game -->
     <string name="back">back</string>
     <string name="skip">skip</string>
-
+    <string name="game_score_default">Score: 0 pts</string>
     <string name="game_score">Score: %1$d pts</string>
-    <!-- /Menu -->
+    <string name="game_hint">Hint</string>
+
+    <!-- /Game -->
 </resources>

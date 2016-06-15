@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <color name="colorBackground">#302e37</color>
-    <color name="colorModalBackground">#302e37</color>
+    <color name="colorModalBackground">#ededed</color>
     <color name="colorButtonBackgroundRed">#d65c4a</color>
     <color name="colorButtonBackgroundGrey">#d0cbcb</color>
     <color name="colorButtonBackgroundBlue">#32a1dd</color>
@@ -9,7 +9,7 @@
     <color name="colorButtonTextWhite">#ffffff</color>
     <color name="colorButtonTextDark">#222128</color>
     <color name="colorTextGrey">#9b9b9b</color>
-    colorButtonBlue
+
     <color name="colorButtonGrey">#d0cbcb</color>
     <color name="colorGame">#32a1dd</color>
     <color name="colorGameToolBar">#303F9F</color>

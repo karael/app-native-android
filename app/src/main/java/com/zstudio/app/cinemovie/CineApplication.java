@@ -10,6 +10,7 @@ import com.android.volley.toolbox.Volley;
 public class CineApplication extends Application {
 
     private String androidId;
+    private String userId;
     private static CineApplication singleInstance;
     private RequestQueue requestQueue;
 
@@ -20,6 +21,14 @@ public class CineApplication extends Application {
                 Secure.ANDROID_ID);
         requestQueue = Volley.newRequestQueue(this);
         CineApplication.singleInstance = this;
+    }
+
+    public void setUserId(String id) {
+        userId = id;
+    }
+
+    public String getUserId() {
+        return userId;
     }
 
     public static CineApplication getSingleInstance() {

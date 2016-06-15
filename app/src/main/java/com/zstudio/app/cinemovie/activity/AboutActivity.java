@@ -1,6 +1,8 @@
 package com.zstudio.app.cinemovie.activity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -21,6 +23,7 @@ import java.util.List;
 
 public class AboutActivity extends AppCompatActivity {
 
+    private Activity activity = this;
     private TextView tv;
     private Button bt;
 
@@ -35,7 +38,13 @@ public class AboutActivity extends AppCompatActivity {
         setTitle("test");
         final ProgressDialog pDialog = new ProgressDialog(this);
         pDialog.setMessage("Loading...");
-        pDialog.show();
+        //pDialog.show();
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(activity);
+        builder.setMessage("coucou")
+                .setTitle("title");
+        final AlertDialog dialog = builder.create();
+
 
         bt.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,27 +53,23 @@ public class AboutActivity extends AppCompatActivity {
             }
         });
 
-        NetworkManager.getTest("Test", new NetworkManager.TestResultListener() {
+        NetworkManager.getUserId("Test", new NetworkManager.JSONObjectResultListener() {
             @Override
             public void onResult(JSONObject result) {
                 pDialog.setMessage("Done");
-                //afficher result
-                //result.toString
-                refreshText(result.toString());
-                //int numberOfMovies = movies.length;
-                //List<Movie> movieList = Arrays.asList(movies);
-                //moviesAdapter.refreshWithMovies(movieList);
                 pDialog.hide();
+                refreshText(result.toString());
             }
 
             @Override
-            public void onFail() {
-                pDialog.setMessage("Error");
+            public void onFail(Integer statusCode) {
+                    pDialog.setMessage("Error: " + statusCode);
             }
         });
     }
 
     private void refreshText(String str) {
-        tv.append(str);
+        tv.append(CineApplication.getSingleInstance().getUserId());
     }
+
 }
