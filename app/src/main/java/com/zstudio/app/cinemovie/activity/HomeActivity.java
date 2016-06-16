@@ -47,7 +47,7 @@ public class HomeActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFail(Integer statusCode) {
+            public void onFail(String statusCode) {
                 Log.e("MYAPP", "api response: " + statusCode);
             }
         });

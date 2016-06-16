@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.Toolbar
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="56dp"
+    android:id="@+id/game_toolbar"
+    android:layout_width="match_parent"
+    android:minHeight="?attr/actionBarSize"
+    android:background="@color/colorBackground"
+    android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+    >
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_score_default"
+        android:id="@+id/game_label_score"
+        android:textColor="@color/colorGame"
+        android:layout_gravity="center" />
+    <Button
+        style="?android:attr/buttonStyleSmall"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:background="@color/colorGame"
+        android:drawableEnd="@drawable/arrow_skip"
+        android:drawablePadding="15sp"
+        android:text="@string/skip"
+        android:textColor="@color/colorButtonTextWhite"
+        android:id="@+id/game_button_skip"
+        android:layout_centerHorizontal="true"
+        android:paddingStart="25dp"
+        android:paddingEnd="15dp"
+        android:clickable="true"
+        android:layout_gravity="end"
+        android:layout_alignParentEnd="true"/>
+</android.support.v7.widget.Toolbar>

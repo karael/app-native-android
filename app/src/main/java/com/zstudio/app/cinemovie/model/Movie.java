@@ -23,6 +23,39 @@ public class Movie implements Parcelable {
     private ArrayList<Actor> actors;
     private ArrayList<Genre> genres;
 
+    public Movie(Parcel in) {
+        id = in.readString();
+        idThemoviedb = in.readString();
+        slug = in.readString();
+        title = in.readString();
+        budget = in.readString();
+        revenue = in.readString();
+        releaseDate = in.readString();
+        index1 = in.readString();
+        index2 = in.readString();
+        index3 = in.readString();
+        illu = in.readString();
+        cover = in.readString();
+        thumbnail = in.readString();
+        if (in.readByte() == 0x01) {
+            actors = new ArrayList<Actor>();
+            in.readList(actors, Actor.class.getClassLoader());
+        } else {
+            actors = null;
+        }
+        if (in.readByte() == 0x01) {
+            genres = new ArrayList<Genre>();
+            in.readList(genres, Genre.class.getClassLoader());
+        } else {
+            genres = null;
+        }
+    }
+
+    public Movie() {
+        actors = new ArrayList<Actor>();
+        genres = new ArrayList<Genre>();
+    }
+
     public String getId() {
         return id;
     }
@@ -127,32 +160,12 @@ public class Movie implements Parcelable {
         this.thumbnail = thumbnail;
     }
 
-    protected Movie(Parcel in) {
-        id = in.readString();
-        idThemoviedb = in.readString();
-        slug = in.readString();
-        title = in.readString();
-        budget = in.readString();
-        revenue = in.readString();
-        releaseDate = in.readString();
-        index1 = in.readString();
-        index2 = in.readString();
-        index3 = in.readString();
-        illu = in.readString();
-        cover = in.readString();
-        thumbnail = in.readString();
-        if (in.readByte() == 0x01) {
-            actors = new ArrayList<Actor>();
-            in.readList(actors, Actor.class.getClassLoader());
-        } else {
-            actors = null;
-        }
-        if (in.readByte() == 0x01) {
-            genres = new ArrayList<Genre>();
-            in.readList(genres, Genre.class.getClassLoader());
-        } else {
-            genres = null;
-        }
+    public ArrayList<Actor> getActors() {
+        return actors;
+    }
+
+    public ArrayList<Genre> getGenres() {
+        return genres;
     }
 
     @Override

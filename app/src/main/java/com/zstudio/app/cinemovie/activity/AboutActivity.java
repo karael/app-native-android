@@ -62,7 +62,7 @@ public class AboutActivity extends AppCompatActivity {
             }
 
             @Override
-            public void onFail(Integer statusCode) {
+            public void onFail(String statusCode) {
                     pDialog.setMessage("Error: " + statusCode);
             }
         });

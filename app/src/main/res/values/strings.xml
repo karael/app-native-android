@@ -19,6 +19,14 @@
     <string name="game_score_default">Score: 0 pts</string>
     <string name="game_score">Score: %1$d pts</string>
     <string name="game_hint">Hint</string>
+    <string name="game_dialog_hint_unlocked_title">Hint ?</string>
+    <string name="game_dialog_hint_locked_title">Hint ?</string>
+    <string name="game_dialog_hint_value"><font size="30">%1$s</font>\n\n<font size="50">%2$s</font></string>
+    <string name="game_dialog_success_label">Congrats !</string>
+    <string name="game_dialog_success_score"><font size="30">%1$s</font>\n\n pts</string>
+    <string name="game_dialog_success_message">Good job ! :)</string>
+    <string name="game_dialog_button_next">Next</string>
+    <string name="game_dialog_button_see_more">See more</string>
 
     <!-- /Game -->
 </resources>

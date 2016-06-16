@@ -28,8 +28,7 @@
         <activity
             android:name=".activity.GameActivity"
             android:screenOrientation="portrait"
-            android:theme="@style/AppThemeNoActionBar"
-            android:windowSoftInputMode="adjustResize"/>
+            android:theme="@style/AppThemeNoActionBar" />
         <activity
             android:name=".activity.AchievementActivity"
             android:screenOrientation="portrait"
@@ -38,6 +37,7 @@
             android:name=".activity.AboutActivity"
             android:screenOrientation="portrait"
             android:theme="@style/AppThemeNoActionBar" />
+        <activity android:name=".activity.MovieDetailsActivity"></activity>
     </application>
 
 </manifest>
