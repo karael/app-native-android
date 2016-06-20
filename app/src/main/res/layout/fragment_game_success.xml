@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/game_dialog_hint"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_gravity="center"
+    android:background="@color/colorModalBackground">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_dialog_success_label"
+        android:id="@+id/game_dialog_success_labelTv"
+        android:layout_marginTop="30dp"
+        android:gravity="center_vertical"
+        android:textSize="24sp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="30dp" />
+
+    <TextView
+        android:layout_width="160dp"
+        android:layout_height="160dp"
+        android:id="@+id/game_dialog_success_scoreTv"
+        android:background="@drawable/circle3stars"
+        android:gravity="center_vertical"
+        android:textAlignment="center"
+        android:text="@string/game_dialog_success_score"
+        android:textColor="@color/colorButtonTextWhite"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginRight="40dp"
+        android:layout_marginLeft="40dp" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/game_dialog_success_message"
+        android:id="@+id/game_dialog_success_messageTv"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginTop="20dp">
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:text="@string/game_dialog_button_see_more"
+
+            android:id="@+id/game_dialog_button_see_moreBt"
+            android:background="#526372"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_gravity="bottom|start"
+            android:textAlignment="center"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true" />
+
+        <Button
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:text="@string/game_dialog_button_next"
+            android:id="@+id/game_dialog_button_nextBt"
+            android:background="#6c7882"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_gravity="bottom|end"
+            android:textAlignment="center"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+
+</LinearLayout>

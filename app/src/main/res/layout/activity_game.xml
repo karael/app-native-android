@@ -3,19 +3,87 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-
-    tools:context=".GameActivity">
+    android:background="@color/colorBackground"
+    tools:context=".activity.GameActivity">
 
     <include
-        android:id="@+id/game_toolbar"
-        layout="@menu/main"
-        >
-    </include>
+        android:id="@+id/game_toolbar_included"
+        layout="@layout/activity_game_toolbar"/>
 
-    <TextView
-        android:layout_below="@+id/game_toolbar"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/game_toolbar_included"
+        android:layout_alignParentBottom="true">
+
+        <com.android.volley.toolbox.NetworkImageView
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:foregroundGravity="center"
+            android:id="@+id/game_illustration"
+            android:src="@drawable/illustration"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:scaleType="fitCenter"/>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/game_hint"
+            android:id="@+id/game_label_hint"
+            android:textColor="@color/colorButtonTextWhite"
+            android:layout_below="@+id/game_illustration"
+            android:layout_alignParentStart="true"
+            android:textSize="16sp"
+            android:gravity="center"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/hint_hover"
+            android:id="@+id/game_button_hint1"
+            android:layout_below="@+id/game_label_hint"
+            android:layout_toStartOf="@+id/game_button_hint2"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/hint_hover"
+            android:id="@+id/game_button_hint2"
+            android:layout_below="@+id/game_label_hint"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp" />
+
+        <Button
+            style="?android:attr/buttonStyleSmall"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:background="@drawable/hint_hover"
+            android:id="@+id/game_button_hint3"
+            android:layout_below="@+id/game_label_hint"
+            android:layout_toEndOf="@+id/game_button_hint2"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp" />
+
+
+        <EditText
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/game_answer"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_marginBottom="30dp"
+            android:inputType="textEmailAddress|textEmailSubject" />
+
+
+
+    </RelativeLayout>
 
 </RelativeLayout>
